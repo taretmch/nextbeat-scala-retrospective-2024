@@ -70,6 +70,7 @@ mdc: true
 - 台場、会場が広くて綺麗
 - 懇親会での交流も楽しかった。やはり Scala バージョン更新に苦労している方 (会社) が多かった
 - 発表は Scala 3 のものばかりで、業務アプリケーションを全て Scala 3 にあげたくなった
+- opaque, coursier, tapir などの単語の読み方を知ることができた
 
 <!-- 
 あとでちゃんと書く
@@ -79,16 +80,16 @@ mdc: true
 
 # ScalaMatsuri 2024 の発表一覧 (Day 1)
 
-- [com.lihaoyi エコシステムによる簡単Scalaプログラミング](https://scalamatsuri.org/ja/programs/SESSION_DAY_1_01) [(slide)](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html)
-- [Scala to WebAssembly: 動機と方法](https://scalamatsuri.org/ja/programs/SESSION_DAY_1_02) [(slide)](https://speakerdeck.com/tanishiking/scala-to-webassembly-exploring-the-how-and-why)
-- [Project Loom の概要と Scala での有用性](https://scalamatsuri.org/ja/programs/SESSION_DAY_1_03)
-- [Scala3とscala-cliでデータプロジェクトの生産性を向上させる方法](https://scalamatsuri.org/ja/programs/SESSION_DAY_1_04)
-- [record4s --- Scala 3のための拡張可能レコード、そして構造的型によるドメインモデリング](https://scalamatsuri.org/ja/programs/SESSION_DAY_1_05) [(slide)](https://speakerdeck.com/tarao/record4s-extensible-records-for-scala-3-and-domain-modeling-with-structural-types)
-- [日本語埋め込みモデルを Scala から使うには何が必要か.](https://scalamatsuri.org/ja/programs/SESSION_DAY_1_06) [(slide)](https://speakerdeck.com/i10416/scalamatsuri2024-how-to-use-embedding-models-from-scala)
-- [Ironライブラリで守られた型安全性](https://scalamatsuri.org/ja/programs/SESSION_DAY_1_07)
-- [数値ライブラリで始める安全なプログラミング](https://scalamatsuri.org/ja/programs/SESSION_DAY_1_08) [(slide)](https://speakerdeck.com/boykush/introduction-to-safe-programming-with-numeric-library)
-- [PHPからScalaへ：私の経験](https://scalamatsuri.org/ja/programs/SESSION_DAY_1_09)
-- [Scalaの開発者ツールエコシステム](https://scalamatsuri.org/ja/programs/SESSION_DAY_1_10) [(slide)](https://slides.com/tomekgodzik/scala-ecosystem)
+- [com.lihaoyi エコシステムによる簡単Scalaプログラミング](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html)
+- [Scala to WebAssembly: 動機と方法](https://speakerdeck.com/tanishiking/scala-to-webassembly-exploring-the-how-and-why)
+- Project Loom の概要と Scala での有用性
+- Scala3とscala-cliでデータプロジェクトの生産性を向上させる方法
+- [record4s --- Scala 3のための拡張可能レコード、そして構造的型によるドメインモデリング](https://speakerdeck.com/tarao/record4s-extensible-records-for-scala-3-and-domain-modeling-with-structural-types)
+- [日本語埋め込みモデルを Scala から使うには何が必要か.](https://speakerdeck.com/i10416/scalamatsuri2024-how-to-use-embedding-models-from-scala)
+- Ironライブラリで守られた型安全性
+- [数値ライブラリで始める安全なプログラミング](https://speakerdeck.com/boykush/introduction-to-safe-programming-with-numeric-library)
+- PHPからScalaへ：私の経験
+- [Scalaの開発者ツールエコシステム](https://slides.com/tomekgodzik/scala-ecosystem)
 
 <!--
 飛び込みカンファレンスについても口頭で紹介する
@@ -98,18 +99,219 @@ mdc: true
 
 # ScalaMatsuri 2024 の発表一覧 (Day 2)
 
-- [Scala ビルド時間の最適化](https://scalamatsuri.org/ja/programs/SESSION_DAY_2_01)
-- [Property-based testing: テストライブラリ活用方法](https://scalamatsuri.org/ja/programs/SESSION_DAY_2_02) [(slide)](https://slides.com/magdastozek/property-based-testing-scala-20-min)
-- [実務で使えるScala初心者向けTips](https://scalamatsuri.org/ja/programs/SESSION_DAY_2_03) [(slide)](https://docs.google.com/presentation/d/e/2PACX-1vSP9jbfKrRj0K4TaSCFfZGsfuufvYXI2Wx2MqVI7eHhagXstuBt0DjSF2sp6bncSA/pub)
-- [作って学ぶ Extensible Effects](https://scalamatsuri.org/ja/programs/SESSION_DAY_2_04) [(slide)](https://docs.google.com/presentation/d/1raybiE8Otk2nreKDyRHoF1HK50K9K-fjL8-37QK8kW4/edit)
-- [Ox を用いた Direct-Style Scala](https://scalamatsuri.org/ja/programs/SESSION_DAY_2_05)
-- [いつ継承を使い、いつ使わないのか](https://scalamatsuri.org/ja/programs/SESSION_DAY_2_06) [(slide)](https://gakuzzzz.github.io/slides/when_to_use_subtyping_when_not_to_use/#1)
+- Scala ビルド時間の最適化
+- [Property-based testing: テストライブラリ活用方法](https://slides.com/magdastozek/property-based-testing-scala-20-min)
+- [実務で使えるScala初心者向けTips](https://docs.google.com/presentation/d/e/2PACX-1vSP9jbfKrRj0K4TaSCFfZGsfuufvYXI2Wx2MqVI7eHhagXstuBt0DjSF2sp6bncSA/pub)
+- [作って学ぶ Extensible Effects](https://docs.google.com/presentation/d/1raybiE8Otk2nreKDyRHoF1HK50K9K-fjL8-37QK8kW4/edit)
+- Ox を用いた Direct-Style Scala
+- [いつ継承を使い、いつ使わないのか](https://gakuzzzz.github.io/slides/when_to_use_subtyping_when_not_to_use/#1)
 
 <!--
 飛び込みカンファレンスについても口頭で紹介する
 -->
 
 ---
+
+## com.lihaoyi エコシステムによる簡単Scalaプログラミング
+
+<br>
+
+- lihaoyi さんによる Scala のライブラリ群の紹介と、その歴史
+- Scalatags, FastParse, uTest, uPickle, Ammonite, Sourcecode, Mill, PPrint, OS-Lib, Requests-Scala, Cask, MainArgs, ScalaSql
+- Cats, ZIO などのライブラリを使わずに、Scala のコアライブラリだけでエコシステムを築き上げてきた
+- Python のようなシンプルな記法で書くことができる
+- com.lihaoyi のライブラリを組み合わせることで、様々なアプリケーションを作ることができる
+  - [組み合わせの一覧 📝](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html#the-comlihaoyi-platform-has-built-out-a-third-way)
+
+---
+
+## com.lihaoyi エコシステムによる簡単Scalaプログラミング
+
+<br>
+
+### 感想
+
+- 誕生秘話が聞けて良かった
+- Scala にたどり着くまでに PHP, Python, Java, C#, F# 全てで作ったとのこと... すごい
+- 2012年〜開発を継続されてきた、そのモチベーションと歴史に感銘を受けた
+- エコシステムに感謝し、貢献していくために活用していきたい
+- 身近なところだと、Scala の研修資料に取り入れやすそう
+- レシーバーもらい忘れて質疑応答の内容が聞き取れなかった... 😭
+
+---
+
+## Scala to WebAssembly: 動機と方法
+
+<br>
+
+- Scala で WebAssembly がサポートされる！という話
+- Scala -> Scala.js -> Wasm
+- WasmGC の話なども
+
+<br>
+
+### 感想
+
+- Scala でフロントエンドを書けるのはロマン
+- 今後のトレンドにもなっていきそうなので、キャッチアップしていきたい
+
+---
+
+## Project Loom の概要と Scala での有用性
+
+<br>
+
+- OpenJDK 21 で導入される仮想スレッドの話
+- Cats Effect, ZIO の Fiber のこと
+
+<br>
+
+### 感想
+
+---
+
+## Scala3とscala-cliでデータプロジェクトの生産性を向上させる方法
+
+<br>
+
+- 
+
+<br>
+
+### 感想
+
+---
+
+## record4s --- Scala 3のための拡張可能レコード、そして構造的型によるドメインモデリング
+
+<br>
+
+- Scala 3 で導入された[構造的型](https://docs.scala-lang.org/scala3/book/types-structural.html)を利用して、型安全なレコードを定義するライブラリの紹介
+- 業務アプリケーションでは、同じようなモデルを使い回すことが多い。管理が煩雑になる問題に対するソリューション
+- circe, upickle のような JSON ライブラリとの連携も可能
+
+<br>
+
+### 感想
+
+- Scala 3.5.0 に入っている NamedTuple に似ており、NamedTuple をどのように使えるか record4s で事前に学ぶことができそう
+
+---
+
+## 日本語埋め込みモデルを Scala から使うには何が必要か.
+
+<br>
+
+- 
+
+<br>
+
+### 感想
+
+---
+
+## Ironライブラリで守られた型安全性
+
+<br>
+
+- 
+
+<br>
+
+### 感想
+
+---
+
+## 数値ライブラリで始める安全なプログラミング
+
+<br>
+
+- [typelevel/spire](https://github.com/typelevel/spire) の紹介
+- Double、BigDecimal などの数値型を扱うとき、計算途中に丸められて全体の計算精度が落ちることがある
+- 途中式に精度を入れず、計算結果の出力に精度を持たせることで、安全な数値計算ができる
+
+---
+
+## 数値ライブラリで始める安全なプログラミング
+
+<br>
+
+### Rational 型
+
+- 有理数の表現
+
+```scala
+import spire.math.Rational
+import java.math.RoundingMode.HALF_UP
+
+val `1/6` = Rational(1, 6)
+println(`1/6`.toBigDecimal(5, HALF_UP))
+// 0.16667
+```
+
+<br>
+
+### Real 型
+
+- 無理数を算出する「式」を表現する
+- 精度を与えると Rational 型に変換できる
+
+```scala
+import spire.math.Real
+import java.math.RoundingMode.HALF_UP
+println(Real(2).sqrt) // 1.4142135623730950488016887242096980785697
+println(Real(2).sqrt.toRational(6)) // 45/32
+println(Real(2).sqrt.toRational(6).toBigDecimal(5, HALF_UP)) // 1.40625
+```
+
+---
+
+## 数値ライブラリで始める安全なプログラミング
+
+<br>
+
+- 他にも Polynomial 型 ($ax + b$ のような一次多項式)、Complex 型などがある
+- Rational の JSON シリアライズは文字列にして構造を保持する
+
+<br>
+
+### 会場の雰囲気 | 感想
+
+- 最近話題に上がっていただけあって盛り上がった
+- 無理数の表現方法が遅延評価で面白い
+- 永続化も文字列で行い構造を保持するのは良いアイデア
+- どうしても近似値が欲しいときは近似値を保持するカラムも用意すれば良さそう
+- [Inexact](https://github.com/typelevel/spire/blob/v0.18.0/core/src/main/scala/spire/math/Real.scala#L578-L589) : シンプルに表現されている
+
+---
+
+## PHPからScalaへ：私の経験
+
+<br>
+
+- Option 型の null safe
+- パターンマッチング
+- 中置記法 (infix, 配列のコレクションメソッド)
+- implicit の表現力 (Scala 3 だと given, using, extension, Conversion)
+
+<br>
+
+### Scala を始めるためにピッタリのリンク集
+
+- https://github.com/KristianLentino99/ScalaMatsuri2024
+
+<br>
+
+### 会場の雰囲気
+
+- Scala のパターンマッチングは強い
+- コレクションメソッドの高階関数は他の言語にも作られてきていて、やはり便利
+- 中置記法のような記法は直感的で、コードの可読性が上がる
+- Scala やっていると当たり前になっている良さを再確認できた
+
+---
+
+## Scalaの開発者ツールエコシステム
 
 # Scala 基礎に関する発表の振り返り
 
@@ -123,7 +325,7 @@ Scala 未経験者、Scala 始めたての人の指針になる発表で、と�
 ポイント 📝
 
 - PHP から Scala に入ったとき、Option、パターンマッチング、中置記法、implicit などの機能が魅力的だった
-- Scala を始めるためにピッタリのリンク集: https://github.com/KristianLentino99/ScalaMatsuri2024
+- Scala を始めるためにピッタリのリンク集: 
 - 実行時エラーを起こすものは避ける、コレクション型の操作は高階関数を使おう、for 糖衣構文を使おうなどなど... [slide](https://docs.google.com/presentation/d/e/2PACX-1vSP9jbfKrRj0K4TaSCFfZGsfuufvYXI2Wx2MqVI7eHhagXstuBt0DjSF2sp6bncSA/pub?slide=id.p37)
 - 代数的データ型と Subtyping (継承) の使い分けは、モデルの構造と操作に着目するとわかりやすい (スライド見るのが一番)
 
@@ -182,19 +384,6 @@ Scalameta、Scala コンパイラのコントリビューターの方々の発�
 
 <!--
 業務アプリケーションに入れて試してみるので、1つ1つ丁寧に感想を書く
--->
-
----
-
-## com.lihaoyi エコシステムによる簡単Scalaプログラミング
-
-- lihaoyi さんが Scala のコアライブラリだけでエコシステムを築き上げてきた、その歴史やモチベーションに感銘を受けた。
-- Python ライブラリのような記述で、Scala 未経験者が触り始めるライブラリとして最適だと感じた。
-- 弊社でも、研修内容に取り込むなどエコシステムを活用することにより、貢献していきたい。
-
-<!--
-Hands on のリンクを貼っても良いかも
-https://www.handsonscala.com/
 -->
 
 ## record4s --- Scala 3のための拡張可能レコード、そして構造的型によるドメインモデリング
