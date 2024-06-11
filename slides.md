@@ -63,14 +63,14 @@ img {
 
 - 株式会社ネクストビート
 - [会社紹介資料](https://speakerdeck.com/nextbeat/company-profile)
-- <span v-click><span v-mark.underline.orange>人口減少社会</span>をメインテーマに、保育園/法人向け SaaS、シェアリングエコノミー、子育てメディア、保育/宿泊業界のHR求人応募システムなど様々な事業を展開している</span>
-- <span v-click>Scala 2.12, Scala 2.13, Scala 3 を使って開発している</span>
-- <span v-click>Scala の事業で主に扱っているドメイン</span>
-  - <span v-click>労務管理、シフト管理</span>
-  - <span v-click>保育</span>
-  - <span v-click>スケジュール、予約管理</span>
-  - <span v-click>料金計算、請求</span>
-  - <span v-click>etc.</span>
+- <span v-mark.underline.orange>人口減少社会</span>をメインテーマに、保育園/法人向け SaaS、シェアリングエコノミー、子育てメディア、保育/宿泊業界のHR求人応募システムなど様々な事業を展開している
+- Scala 2.12, Scala 2.13, Scala 3 を使って開発している
+- Scala の事業で主に扱っているドメイン
+  - 労務管理、シフト管理
+  - 保育
+  - スケジュール、予約管理
+  - 料金計算、請求
+  - etc.
 
 ---
 
