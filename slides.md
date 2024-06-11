@@ -1,29 +1,60 @@
 ---
-theme: default
-title: ScalaMatsuri 2024 の発表振り返りと実務への応用について
+theme: seriph
+title: ScalaMatsuri 2024 の発表振り返り
 class: text-center
 highlighter: shiki
 drawings:
   persist: false
 transition: (slide)-left
 mdc: true
+layout: intro
 ---
 
-## ScalaMatsuri 2024 の発表振り返りと実務への応用について
+# ScalaMatsuri 2024 の発表振り返り
 
-<!--
-タイトル悩ましい。
-実務への応用はあんまないかも...
-純粋に Scala を楽しめた会だったので、その楽しさを伝えられた方が良い
--->
+NB-Scala レトロスペクティブ (#NextMatsuri)
 
 ---
 
 # 自己紹介
 
-- ScalaMatsuri には2021年から参加 (2023年、2024年にオフライン参加 🏮)
-- Scala は実務で触り始めて5年目
-- Platform チームで、社内の共通ライブラリ (Scala, TypeScript, Capacitor) の開発や認証基盤の開発を担当
+<div class="container">
+  <div class="left">
+    <ul>
+      <li>ScalaMatsuri には2021年から参加 (2023年、2024年にオフライン参加 🏮)</li>
+      <li>Scala は実務で触り始めて5年目</li>
+      <li>Platform チームで、社内の共通ライブラリ (Scala, TypeScript, Capacitor) の開発や認証基盤の開発を担当</li>
+    </ul>
+  </div>
+  <div class="right">
+    <img src="/images/icon.png" />
+    <div class="links">
+      <a href="https://twitter.com/taretmch" target="_blank">@taretmch</a>
+      <a href="https://github.com/taretmch" target="_blank">github</a>
+    </div>
+  </div>
+</div>
+
+<style scoped>
+.container {
+    display: flex;
+}
+.left {
+    margin-right: 10px;
+}
+img {
+    height: 70%;
+    margin: auto;
+}
+.links {
+    margin-top: 10px;
+    text-align: center;
+    color: #0077b5;
+}
+.links a {
+    margin: 0 5px;
+}
+</style>
 
 ---
 
@@ -51,30 +82,165 @@ mdc: true
 
 # ScalaMatsuri 2024 お疲れさまでした！
 
-<!--
-- ここに発表の一覧のスクショを貼る。元リンクも忘れずに
-- どの発表が印象に残ったか、、などを簡単にコメント
-- 会場の雰囲気がわかる写真があれば
--->
+<style scoped>
+.container {
+    display: flex;
+    width: 70%;
+    margin: auto;
+}
+.left, .right {
+    padding: 10px;
+}
+.left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.right img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.left img {
+    width: 100%;
+    height: auto;
+}
+</style>
+
+<div class="container">
+  <div class="left">
+    <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_9993.png" />
+  </div>
+  <div class="right">
+    <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_0006.png" />
+    <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_9999.png" />
+  </div>
+</div>
+
+---
+
+# ScalaMatsuri 2024 の概要
+
+- [アジア最大級の Scala カンファレンス](https://scalamatsuri.org/ja)
+- 日時：2024年6月8日(土)、6月9日(日)
+- 会場: 東京・台場
+- <span v-mark.underline.orange>2019年以来のオフライン開催！</span>
+
+<div class="image-container">
+  <img src="/images/matsuri.png">
+</div>
+
+<style scoped>
+.image-container {
+  position: absolute;
+  right: 50px;
+  top: 100px;
+}
+img {
+  width: 300px;
+}
+</style>
 
 ---
 
 # ScalaMatsuri 2024 の感想
 
-- 昨年もオフライン参加したがハイブリッドだったので、雰囲気が全く違った
-- 両日とも楽しすぎてあっという間に終わった
-- Scala 好きの人が集まっていて、会場の雰囲気がよかった
+### 雰囲気
+
+- 昨年ハイブリッドでオフライン参加したが、雰囲気が全く違った
+- Scala 好きの人が集まっていて、熱気があった
 - グローバル！
-- 英語<->日本語の同時通訳があり、大変助かりました...英語得意になりたい
+
+<div class="image-container">
+  <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_0006.png" />
+</div>
+
+<style scoped>
+.image-container {
+  margin-top: 20px;
+}
+img {
+  margin: auto;
+  height: 280px;
+}
+</style>
+
+---
+
+# ScalaMatsuri 2024 の感想
+
+### 会場
+
+- 英語 <-> 日本語の同時通訳 (レシーバー配り、質疑応答のマイク運搬大変そうだった)
 - お昼の弁当、コーヒーが美味しかった
-- 台場、会場が広くて綺麗
-- 懇親会での交流も楽しかった。やはり Scala バージョン更新に苦労している方 (会社) が多かった
-- 発表は Scala 3 のものばかりで、業務アプリケーションを全て Scala 3 にあげたくなった
+- ノベルティが豪華だった
+- 懇親会 🍺
+
+<div class="image-container">
+  <img src="/images/badge.png" />
+  <p>素敵な Scala のバッジも</p>
+</div>
+
+<style scoped>
+.image-container {
+  margin-top: 20px;
+}
+img {
+  height: 200px;
+  margin: auto;
+}
+.image-container p {
+  text-align: center;
+}
+</style>
+
+---
+
+# ScalaMatsuri 2024 の感想
+
+### 発表について
+
+- Scala 3, scala-cli を使ったものが多かった
 - opaque, coursier, tapir などの単語の読み方を知ることができた
 
-<!-- 
-あとでちゃんと書く
--->
+|  |  |
+| --- | --- |
+| opaque | オペーク |
+| coursier  | クルシェ |
+| tapir | タピア |
+
+---
+
+# ScalaMatsuri 2024 の感想
+
+### 感想
+
+- 両日とも楽しすぎてあっという間に終わった
+- 台場、会場が広くて綺麗
+- 懇親会での交流も楽しかった。やはり Scala バージョン更新に苦労している方 (会社) が多かった
+- 業務アプリケーションを全て Scala 3 にあげたくなった
+
+<div class="image-container">
+  <img src="/images/daiba_kirei.png">
+  <img src="/images/gohan_oishii.png">
+</div>
+
+<style scoped>
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+img {
+  width: 40%;
+}
+</style>
 
 ---
 
@@ -99,7 +265,7 @@ mdc: true
 
 # ScalaMatsuri 2024 の発表一覧 (Day 2)
 
-- Scala ビルド時間の最適化
+- [Scala ビルド時間の最適化](https://speakerdeck.com/bishabosha/optimising-scala-3-build-times-scala-matsuri)
 - [Property-based testing: テストライブラリ活用方法](https://slides.com/magdastozek/property-based-testing-scala-20-min)
 - [実務で使えるScala初心者向けTips](https://docs.google.com/presentation/d/e/2PACX-1vSP9jbfKrRj0K4TaSCFfZGsfuufvYXI2Wx2MqVI7eHhagXstuBt0DjSF2sp6bncSA/pub)
 - [作って学ぶ Extensible Effects](https://docs.google.com/presentation/d/1raybiE8Otk2nreKDyRHoF1HK50K9K-fjL8-37QK8kW4/edit)
@@ -121,7 +287,21 @@ mdc: true
 - Cats, ZIO などのライブラリを使わずに、Scala のコアライブラリだけでエコシステムを築き上げてきた
 - Python のようなシンプルな記法で書くことができる
 - com.lihaoyi のライブラリを組み合わせることで、様々なアプリケーションを作ることができる
-  - [組み合わせの一覧 📝](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html#the-comlihaoyi-platform-has-built-out-a-third-way)
+  - [組み合わせの一覧 📝](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html#the-comlihaoyi-platform-has-built-out-a-third-way) (スクショはこのリンクから作成)
+
+<div class="image-container">
+  <img src="/images/lihaoyi-cheat-sheet.png" />
+</div>
+
+<style scoped>
+.image-container {
+  margin-top: 20px;
+}
+img {
+  height: 150px;
+  margin: auto;
+}
+</style>
 
 ---
 
@@ -135,7 +315,7 @@ mdc: true
 - Scala にたどり着くまでに PHP, Python, Java, C#, F# 全てで作ったとのこと... すごい
 - 2012年〜開発を継続されてきた、そのモチベーションと歴史に感銘を受けた
 - エコシステムに感謝し、貢献していくために活用していきたい
-- 身近なところだと、Scala の研修資料に取り入れやすそう
+  - 身近なところだと、Scala の研修資料に取り入れやすそう
 - レシーバーもらい忘れて質疑応答の内容が聞き取れなかった... 😭
 
 ---
@@ -150,10 +330,14 @@ mdc: true
 
 <br>
 
+<div v-click>
+
 ### 感想
 
-- Scala でフロントエンドを書けるのはロマン
-- 今後のトレンドにもなっていきそうなので、キャッチアップしていきたい
+- Scala でフロントエンドを書けるのはロマンがあって良い
+- WebAssembly は未知の領域だが、Scala で書けるのは楽しそうと感じた
+
+</div>
 
 ---
 
