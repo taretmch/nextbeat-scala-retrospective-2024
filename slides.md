@@ -155,7 +155,7 @@ img {
 
 - 昨年ハイブリッドでオフライン参加したが、雰囲気が全く違った
 - Scala 好きの人が集まっていて、熱気があった
-- グローバル！
+- 英語の発表も多く、グローバル！
 
 <div class="image-container">
   <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_0006.png" />
@@ -163,11 +163,13 @@ img {
 
 <style scoped>
 .image-container {
-  margin-top: 20px;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
 }
 img {
-  margin: auto;
   height: 280px;
+  margin: auto;
 }
 </style>
 
@@ -177,9 +179,11 @@ img {
 
 ### 会場
 
-- 英語 <-> 日本語の同時通訳 (レシーバー配り、質疑応答のマイク運搬大変そうだった)
-- お昼の弁当、コーヒーが美味しかった
+- 発表、質疑応答時の英語 <-> 日本語の同時通訳があって、英語わからなくても楽しめた
+  - レシーバーの配布、マイクの運搬お疲れさまでした...
+- 会場が広く、また、座るのが辛くなかった
 - ノベルティが豪華だった
+- お昼の弁当、コーヒーが美味しかった
 - 懇親会 🍺
 
 <div class="image-container">
@@ -189,7 +193,9 @@ img {
 
 <style scoped>
 .image-container {
-  margin-top: 20px;
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
 }
 img {
   height: 200px;
@@ -206,7 +212,9 @@ img {
 
 ### 発表について
 
+- Scala のビルドツール、ライブラリ、エコシステムの進化を学ぶことができた
 - Scala 3, scala-cli を使ったものが多かった
+- Scala 3 は生産性が高い、書いていて楽しい、Scala 2 よりも理解しやすい。もっと流行らせたい
 - opaque, coursier, tapir などの単語の読み方を知ることができた
 
 |  |  |
@@ -215,11 +223,10 @@ img {
 | coursier  | クルシェ |
 | tapir | タピア |
 
+
 ---
 
 # ScalaMatsuri 2024 の感想
-
-### 感想
 
 - 両日とも楽しすぎてあっという間に終わった
 - 台場、会場が広くて綺麗
@@ -249,7 +256,7 @@ img {
 - [com.lihaoyi エコシステムによる簡単Scalaプログラミング](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html)
 - [Scala to WebAssembly: 動機と方法](https://speakerdeck.com/tanishiking/scala-to-webassembly-exploring-the-how-and-why)
 - Project Loom の概要と Scala での有用性
-- Scala3とscala-cliでデータプロジェクトの生産性を向上させる方法
+- [Scala3とscala-cliでデータプロジェクトの生産性を向上させる方法](https://github.com/koljamaier/big-data-productivty-booster-scalamatsuri-2024/blob/main/slides/The%20productivity%20booster%20for%20your%20Data%20Projects%20with%20Scala3%20%26%20scala-cli.pdf)
 - [record4s --- Scala 3のための拡張可能レコード、そして構造的型によるドメインモデリング](https://speakerdeck.com/tarao/record4s-extensible-records-for-scala-3-and-domain-modeling-with-structural-types)
 - [日本語埋め込みモデルを Scala から使うには何が必要か.](https://speakerdeck.com/i10416/scalamatsuri2024-how-to-use-embedding-models-from-scala)
 - Ironライブラリで守られた型安全性
@@ -278,18 +285,17 @@ img {
 
 ---
 
-## com.lihaoyi エコシステムによる簡単Scalaプログラミング
+# com.lihaoyi エコシステムによる簡単Scalaプログラミング
 
-<br>
+### ポイント
 
 - lihaoyi さんによる Scala のライブラリ群の紹介と、その歴史
-- Scalatags, FastParse, uTest, uPickle, Ammonite, Sourcecode, Mill, PPrint, OS-Lib, Requests-Scala, Cask, MainArgs, ScalaSql
-- Cats, ZIO などのライブラリを使わずに、Scala のコアライブラリだけでエコシステムを築き上げてきた
-- Python のようなシンプルな記法で書くことができる
-- com.lihaoyi のライブラリを組み合わせることで、様々なアプリケーションを作ることができる
-  - [組み合わせの一覧 📝](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html#the-comlihaoyi-platform-has-built-out-a-third-way) (スクショはこのリンクから作成)
+- <span v-click>Cats, ZIO などのライブラリを使わずに、Scala のコアライブラリだけでエコシステムを築き上げてきた</span>
+- <span v-click>Python のようなシンプルな記法で書くことができる</span>
+- <span v-click>com.lihaoyi のライブラリを組み合わせることで、様々なアプリケーションを作ることができる</span>
+  - <span v-click>[組み合わせの一覧 📝](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html#the-comlihaoyi-platform-has-built-out-a-third-way) (スクショはこのリンクから作成)</span>
 
-<div class="image-container">
+<div v-click class="image-container">
   <img src="/images/lihaoyi-cheat-sheet.png" />
 </div>
 
@@ -305,24 +311,19 @@ img {
 
 ---
 
-## com.lihaoyi エコシステムによる簡単Scalaプログラミング
-
-<br>
+# com.lihaoyi エコシステムによる簡単Scalaプログラミング
 
 ### 感想
 
-- 誕生秘話が聞けて良かった
-- Scala にたどり着くまでに PHP, Python, Java, C#, F# 全てで作ったとのこと... すごい
-- 2012年〜開発を継続されてきた、そのモチベーションと歴史に感銘を受けた
-- エコシステムに感謝し、貢献していくために活用していきたい
-  - 身近なところだと、Scala の研修資料に取り入れやすそう
-- レシーバーもらい忘れて質疑応答の内容が聞き取れなかった... 😭
+- <span v-click>誕生秘話が聞けて良かった</span>
+- <span v-click>2012年〜開発を継続されてきた、そのモチベーションと歴史に感銘を受けた</span>
+- <span v-click>Scala にたどり着くまでに PHP, Python, Java, C#, F# 全てで作ったとのこと... すごい</span>
+- <span v-click>エコシステムに感謝し、貢献していくために活用していきたい</span>
+  - <span v-click>身近なところだと、Scala の研修資料に取り入れやすそう</span>
 
 ---
 
-## Scala to WebAssembly: 動機と方法
-
-<br>
+# Scala to WebAssembly: 動機と方法
 
 - Scala で WebAssembly がサポートされる！という話
 - Scala -> Scala.js -> Wasm
@@ -341,24 +342,32 @@ img {
 
 ---
 
-## Project Loom の概要と Scala での有用性
+# Project Loom の概要と Scala での有用性
+
+- OpenJDK 21 で導入された仮想スレッドの話
+- Scala では、Cats Effect, ZIO の Fiber が該当する
+- JVM なので Scala でも使える
 
 <br>
 
-- OpenJDK 21 で導入される仮想スレッドの話
-- Cats Effect, ZIO の Fiber のこと
-
-<br>
+<div v-click>
 
 ### 感想
 
+- 最新の Java についてキャッチアップすることができ、勉強になった
+- JVM で動作する強みを、改めて感じた
+
+</div>
+
 ---
 
-## Scala3とscala-cliでデータプロジェクトの生産性を向上させる方法
+# Scala3とscala-cliでデータプロジェクトの生産性を向上させる方法
 
-<br>
-
-- 
+- Scala CLI x Apache Spark x Apache Kafka x BigQuery でデータ処理を行う話
+- <span v-click>Scala 3 の強み</span>
+  - <span v-click>Syntax</span><span v-click>, Enums</span><span v-click>, トップレベル定義</span><span v-click>, リリースサイクル</span><span v-click>, Scala CLI</span>
+- <span v-click>Scala CLI によって、Spark によるデータ処理を Python のように生産性高く書くことができる</span>
+- <span v-click>Scala.js のおかげで、BigQuery のユーザー定義関数を Scala で書くことができる</span>
 
 <br>
 
