@@ -5,7 +5,7 @@ class: text-center
 highlighter: shiki
 drawings:
   persist: false
-transition: (slide)-left
+transition: slide-left
 mdc: true
 layout: intro
 ---
@@ -371,18 +371,18 @@ img {
 ```scala
 import com.github.tarao.record4s.%
 import com.github.tarao.record4s.circe.Codec.encoder
+import io.circe.syntax.*
 
 val r = %(name = "taretmch", age = 20)
 println(r)                                     // - %(name = taretmch, age = 20)
 println(r.name)                                // - taretmch
 println(r.asJson.noSpaces)                     // - {"name":"taretmch","age":20}
-println(r + %(email = "taretmch@example.com")) // - %(name = taretmch, age = 20, email = taretmch@example.com)
+println(r + (email = "taretmch@example.com")) // - %(name = taretmch, age = 20, email = taretmch@example.com)
 ```
 
 </div>
 
 <!--
-- 名前付きタプルのように扱うことができる
 - circe, upickle などの JSON ライブラリとの連携も可能
 -->
 
@@ -393,7 +393,6 @@ println(r + %(email = "taretmch@example.com")) // - %(name = taretmch, age = 20,
 ### 感想
 
 - 構造的型の便利さを知った
-- NamedTuple の良さを知ることができた
 - よく request/response のデータ型を case class で量産しているが、record4s で定義することでコード量を減らせそう
   - 実際にやってみたが、Record に対する型クラスを用意すると便利だった
 
@@ -401,31 +400,8 @@ println(r + %(email = "taretmch@example.com")) // - %(name = taretmch, age = 20,
 
 # 日本語埋め込みモデルを Scala から使うには何が必要か.
 
-- 自然言語処理において、日本語埋め込みモデルを Scala から使用する方法についての話
-- Java のライブラリを通じて、Scala で日本語埋め込みモデルに対して自然言語処理することができる
-
-<br>
-
-### 感想
-
-- Python だとワンライナーでできるが、Scala でやることのロマンを感じた
-- JVM のエコシステムは強みだと感じた
-- 難しかった
-
----
-
-# Ironライブラリで守られた型安全性
-
-- 制約を型として表現する、Refinement type のためのライブラリ
-- Scala 2 では [refined](https://github.com/fthomas/refined) が主なライブラリだった
-- デフォルトでサポートされている制約が多い
-- 例えば、以下のような制約を表現できる
-
-```scala
-
-```
-
-<!-- TODO: あとで書く -->
+- <span v-click>自然言語処理において、日本語埋め込みモデルを Scala から使用する方法についての話</span>
+- <span v-click>Java のライブラリを通じて、Scala で日本語埋め込みモデルに対して自然言語処理することができる</span>
 
 <br>
 
@@ -433,7 +409,43 @@ println(r + %(email = "taretmch@example.com")) // - %(name = taretmch, age = 20,
 
 ### 感想
 
-- require 使ってるなら Iron に書き換えた方が安全
+- Python だとワンライナーでできるが、Scala でやることのロマンを感じた
+- JVM のエコシステムは強みだと感じた
+- 難しかった
+
+</div>
+
+---
+
+# Ironライブラリで守られた型安全性
+
+- <span v-click>制約を型として表現する、Refinement type のためのライブラリ (Scala 2 だと [refined](https://github.com/fthomas/refined) が有名)</span>
+
+<div v-click>
+
+```scala {|2|6,7|9,10,11}
+// name はアルファベットのみ、age は 0 より大きい
+case class User(name: String :| Alphanumeric, age: Int :| Greater[0])
+
+def createUser(name: String, age: Int): Either[String, User] =
+  for {
+    n <- name.refineEither[Alphanumeric]
+    a <- age.refineEither[Greater[0]]
+  } yield User(n, a)
+println(createUser("taretmch", 20))  // Right(User(taretmch,20))
+println(createUser("_taretmch", 20)) // Left(Should be alphanumeric)
+println(createUser("taretmch", 0))   // Left(Should be greater than 0)
+```
+
+</div>
+
+<br>
+
+<div v-click>
+
+### 感想
+
+- 制約を型として表現するとわかりやすいし、コンパイル時にエラーが出るので開発しやすい
 - 後の発表のプロパティベーステストと組み合わせるとコードの信頼性が高まりそう
 
 </div>
@@ -442,9 +454,9 @@ println(r + %(email = "taretmch@example.com")) // - %(name = taretmch, age = 20,
 
 # 数値ライブラリで始める安全なプログラミング
 
-- [typelevel/spire](https://github.com/typelevel/spire) の紹介
-- Double、BigDecimal などの数値型を扱うとき、計算途中に丸められて全体の計算精度が落ちることがある
-- 途中式に精度を入れず、計算結果の出力に精度を持たせることで、安全な数値計算ができる
+- <span v-click>[typelevel/spire](https://github.com/typelevel/spire) の紹介</span>
+- <span v-click>Double、BigDecimal などの数値型を扱うとき、計算途中に丸められて全体の計算精度が落ちることがある</span>
+- <span v-click>途中式に精度を入れず、計算結果の出力に精度を持たせることで、安全な数値計算ができる</span>
 
 <br>
 
@@ -458,9 +470,11 @@ println(r + %(email = "taretmch@example.com")) // - %(name = taretmch, age = 20,
 import spire.math.Rational
 import java.math.RoundingMode.HALF_UP
 
-val `1/6` = Rational(1, 6)
-println(`1/6`.toBigDecimal(5, HALF_UP))
-// 0.16667
+val `1/2` = Rational(1, 2)
+val `1/3` = Rational(1, 3)
+val `5/6` = `1/2` + `1/3`
+println(`5/6`.toBigDecimal(5, HALF_UP))
+// 0.83333
 ```
 
 </div>
@@ -531,7 +545,7 @@ println(Real(2).sqrt.toRational(6).toBigDecimal(5, HALF_UP)) // 1.40625
 
 # Scalaの開発者ツールエコシステム
 
-- Scalameta、Metals など開発者ツールについての紹介
+- 開発者ツールについての紹介
 
 |  |  |
 | --- | --- |
@@ -571,50 +585,220 @@ td {
 
 # Scala ビルド時間の最適化
 
-- コンパイルのレイヤー (e.g. sbt -> zinc -> scalac) 、コンパイルフェーズの紹介
-- 適切にプロジェクトを分割し (1プロジェクト20ファイルくらい) 依存関係を綺麗にすれば、並行ビルドによりビルド時間を短縮できる
-- パイプラインビルド (Scala 3.5.0) によるビルド時間の短縮
+- <span v-click>Scala のビルドツールに関しての話</span>
+- <span v-click>コンパイルのレイヤー (e.g. sbt -> zinc -> scalac) 、フェーズを意識することでビルド時間を短縮できる</span>
+  - <span v-click>プロジェクトの分割 (1プロジェクト20ファイルくらいが良いらしい)、依存関係の整理による並行ビルド</span>
+- <span v-click>Scala 3.4.0 ではビルドの進捗状況表示、キャンセルの機能が追加された</span>
+- <span v-click>Scala 3.5.0 ではパイプラインビルドが導入される (Scala 2, sbt 1.4 からのポーティング)</span>
+
+<!--
+scala center の Jamie Thompson さんによる発表
+-->
+
+<br>
+
+<div v-click>
+
+### 感想
+
+- プロダクションコードのビルド時間を解析してみた
+  - 綺麗に分割されているプロジェクトほど並行ビルドされており、ビルド時間が短縮されていた
+  - 一方でプロジェクト自体が肥大化して依存関係が汚くなると、直列でビルドが行われビルド時間が長くなっていた
+- 開発生産性のためにも、sbt プロジェクトのアーキテクチャを見直すことが重要だと感じた
+
+</div>
 
 ---
 
 # Property-based testing: テストライブラリ活用方法
 
-- プロパティベースのテスト
-- 満たすべき性質を定義し、テストを自動生成する
-- Scala のライブラリは Scalacheck
-- プロパティを定義するには深いドメイン知識と一定のコツが必要
-- 例を使ったテストとの使い分けが重要
-- 重要なコンポーネントに対してはプロパティベースのテストを使うと良い
+- <span v-click>プロパティベーステストの話</span>
+  - <span v-click>満たすべき性質を定義し、テストを自動生成する</span>
+  - <span v-click>テストデータの生成規則を定義する</span>
+- <span v-click>Scala のライブラリには [ScalaCheck](https://scalacheck.org/) がある</span>
+
+<div v-click>
+
+```scala
+// 例: 0〜100 までの整数
+val smallInteger = Gen.choose(0,100)
+(1 to 10).foreach(_ => println(smallInteger.sample))
+// サンプル: Some(77), Some(74), Some(6), Some(67), Some(8), Some(13), Some(77), Some(56), Some(64), Some(40)
+```
+
+</div>
+
+- <span v-click>非常に強力だが、テスト対象に応じて、例を使ったテストとプロパティベーステストを使い分けるのが重要</span>
+  - <span v-click>例を使ったテストから始める</span>
+  - <span v-click>重要なコンポーネントに対してはプロパティベーステストに移行していく</span>
+
+---
+
+# Property-based testing: テストライブラリ活用方法
+
+### 感想
+
+- Iron もそうだが、対象の性質を静的に表現することのわかりやすさが良い
+- 発表であったように、プロパティベーステストは適切なタイミングで使い分けよう
 
 ---
 
 # 実務で使えるScala初心者向けTips
 
+- <span v-click>Scala 初心者に向けた Tips の紹介</span>
+  - <span v-click>実行時エラーを起こすものは避ける (`Option.empty[A].get`, `Seq.empty[A].head`)</span>
+  - <span v-click>コレクション型の操作は高階関数を使おう (`forall`, `exists`, ...)</span>
+  - <span v-click>flatMap の波動拳の代わりに for 糖衣構文を使おう</span>
+  - <span v-click>Enum のパターンマッチでは `case _` を使わないようにしよう (大事)</span>
+
+<div v-click>
+```scala
+enum Color:
+  case Red, Green, Blue
+
+def getEmojiNotGood(color: Color): String = color match
+  case Color.Red => "🔴"
+  case Color.Green => "🟢"
+  case _ => "🔵" // Color に新しいケースが追加されたときにコンパイルエラーにならない
+
+def getEmojiGood(color: Color): String = color match
+  case Color.Red => "🔴"
+  case Color.Green => "🟢"
+  case Color.Blue => "🔵" // Color に新しいケースが追加されたときにコンパイルエラーになる
+```
+</div>
+
+- <span v-click>[まとめスライド](https://docs.google.com/presentation/d/e/2PACX-1vSP9jbfKrRj0K4TaSCFfZGsfuufvYXI2Wx2MqVI7eHhagXstuBt0DjSF2sp6bncSA/pub?slide=id.p37)</span>
+
+---
+
+# 実務で使えるScala初心者向けTips
+
+### 感想
+
+- Option や Seq で値があることがわかっているのであれば、NonEmptyList などの型で保証すると良い
+- 慣れてない方だと実務でもたまに見かけるコードがあるので、ちゃんとレビューで落とそう
+- レビューされる前に自分で気づけるようになろう
+
 ---
 
 # 作って学ぶ Extensible Effects
+
+- <span v-click>エフェクトシステムの実装である Extensible Effects (Eff) をどう作るか考える話</span>
+- <span v-click>アセンブリ言語の命令セットを処理する機械を紐解いていくと、Eff の仕組みが理解できる(らしい)</span>
+- <span v-click>何か語れるほど理解していないので、[スライド](https://docs.google.com/presentation/d/1raybiE8Otk2nreKDyRHoF1HK50K9K-fjL8-37QK8kW4/edit#slide=id.p)を見てください</span>
+
+<div v-click>
+
+<br>
+
+### 感想
+
+- 難しくて脳が疲れたけど、アセンブリ言語→インタープリタ→Eff という流れが面白かった
+- 来年こそは、発表を完全理解して頷けるように精進する
+
+</div>
 
 ---
 
 # Ox を用いた Direct-Style Scala
 
-- 手続き的な記法で並行プログラミングを行うためのライブラリ
-- Go の goroutine のような記法で書ける
-- Scala 未経験者の方でも直感的に書くことができるのでは
+- <span v-click>手続き的な記法で並行プログラミングを行うためのライブラリ [Ox](https://github.com/softwaremill/ox)</span>
+- <span v-click>Project Loom、Go のライブラリ jox が参考にされている</span>
+
+<div v-click>
+
+```scala
+import ox.*
+import scala.concurrent.duration.*
+
+def computation1: Int = {
+  sleep(2.seconds)
+  1
+}
+def computation2: String = {
+  sleep(1.second)
+  "2"
+}
+val resultPar: (Int, String) = par(computation1, computation2)
+println(resultPar)
+// (1, "2")
+```
+
+</div>
+
+<br>
+
+<div v-click>
+
+### 感想
+
+- 手続き型のように書けるのは Scala 未経験者にも優しい
+
+</div>
 
 ---
 
 # いつ継承を使い、いつ使わないのか
 
+- <span v-click>サブタイピングと代数的データ型の使い分けについての話</span>
+- <span v-click>モデルの構造と操作に着目するとわかりやすい</span>
+
+<div v-click>
+```scala
+// サブタイピングは、新しい構造 (サブクラス) を追加しやすい
+// 一方で、Shape に対して新しい操作を追加すると、既存のコードにも影響が出る
+trait Shape:
+  def area: Double
+
+class Circle(val radius: Double) extends Shape:
+  def area: Double = math.Pi * radius * radius
+class Rectangle(val width: Double, val height: Double) extends Shape:
+  def area: Double = width * height
+```
+</div>
+
+- <span v-click>サブタイピングは以下のケースに向いている</span>
+  - <span v-click>ActiveRecord のように操作を1つのレイヤーで隠蔽できる場合</span>
+  - <span v-click>フレームワークやライブラリなど、データ構造の定義を委ねる場合</span>
+
+---
+
+# いつ継承を使い、いつ使わないのか
+
+```scala
+// 代数的データ型は、構造 (ケース) を追加すると既存のコードに影響が出る (コンパイルエラーにはなる)
+// 一方で、新しい操作は追加しやすい
+enum ShapeADT:
+  case Circle(radius: Double)
+  case Rectangle(width: Double, height: Double)
+
+def area(shape: ShapeADT): Double = shape match
+  case ShapeADT.Circle(radius) => math.Pi * radius * radius
+  case ShapeADT.Rectangle(width, height) => width * height
+```
+
+- <span v-click>代数的データ型は以下のケースに向いている</span>
+  - <span v-click>レイヤードアーキテクチャを採用するような、一定規模以上のアプリケーション</span>
+
+---
+
+# いつ継承を使い、いつ使わないのか
+
+### 感想
+
+- "保守性が高くなりそう" って感覚の言語化
+- 継承は、アーキテクチャによって使い分けることが重要
+
 ---
 
 # まとめ
 
-- Scala のビルドツール、ライブラリ、エコシステムは日々進化している。その進化を実感できる場として ScalaMatsuri は最適
-- 今年は、Scala の基礎から応用、コンパイラ、ライブラリまで幅広いトピックが取り上げられた
-- 2019年以来のオフライン開催で、会場の雰囲気、熱気は最高だった
-- Scala 3 は生産性が高い、書いていて楽しい、Scala 2 よりも理解しやすい。もっと流行らせたい
-- 来年は難しい発表にも頷いて聞けるように精進する
+- <span v-click>Scala のビルドツール、ライブラリ、エコシステムは日々進化している。その進化を実感できる場として ScalaMatsuri は最適</span>
+- <span v-click>今年は、Scala の基礎から応用、コンパイラ、ライブラリまで幅広いトピックが取り上げられた</span>
+- <span v-click>2019年以来のオフライン開催で、会場の雰囲気、熱気は最高だった</span>
+- <span v-click>Scala 3 は生産性が高い、書いていて楽しい、Scala 2 よりも理解しやすい。もっと流行らせたい</span>
+- <span v-click>来年は難しい発表にも頷いて聞けるように精進する</span>
 
 ---
 
@@ -773,6 +957,5 @@ img {
 ### 感想
 
 - case class 定義を簡略化するだけで、コード量が減りメンテナンスしやすくなるのではないかと感じた
-- マクロを使っているので、コンパイル時間への注意は必要
-- Scala 3.5.0 で導入予定の NamedTuple を使うモチベーションが高まった
+- Scala 3.5.0 で試験導入予定の NamedTuple を使うモチベーションが高まった
 - Scala 3、標準ライブラリの API と同じようにマクロが使えてすごい
