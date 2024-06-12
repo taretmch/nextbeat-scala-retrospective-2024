@@ -2,6 +2,7 @@
 //> using dep "com.softwaremill.ox::core:0.2.1"
 
 import ox.*
+import scala.concurrent.duration.*
 
 def computation1: Int = {
   sleep(2.seconds)
