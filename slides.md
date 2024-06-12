@@ -22,9 +22,9 @@ NB-Scala レトロスペクティブ (#NextMatsuri) - 2024年6月14日<br>
 <div class="container">
   <div class="left">
     <ul>
-      <li>ScalaMatsuri には2021年から参加 (2023年、2024年にオフライン参加 🏮)</li>
-      <li>Scala は実務で触り始めて5年目</li>
-      <li>Platform チームで、社内の共通ライブラリ (Scala, TypeScript, Capacitor) の開発や認証基盤の開発を担当</li>
+      <li>ScalaMatsuri には2021年から参加🏮</li>
+      <li>Scala 実務経験5年目</li>
+      <li>社内の共通ライブラリ (Scala, TypeScript, Capacitor) や認証基盤を担当</li>
     </ul>
   </div>
   <div class="right">
@@ -62,15 +62,9 @@ img {
 # 会社紹介
 
 - 株式会社ネクストビート
-- [会社紹介資料](https://speakerdeck.com/nextbeat/company-profile)
 - <span v-mark.underline.orange>人口減少社会</span>をメインテーマに、保育園/法人向け SaaS、シェアリングエコノミー、子育てメディア、保育/宿泊業界のHR求人応募システムなど様々な事業を展開している
-- Scala 2.12, Scala 2.13, Scala 3 を使って開発している
-- Scala の事業で主に扱っているドメイン
-  - 労務管理、シフト管理
-  - 保育
-  - スケジュール、予約管理
-  - 料金計算、請求
-  - etc.
+- 使用技術: Scala (2.12, 2.13, 3), TypeScript (Svelte, NestJS, Angular, ...), ...
+- [会社紹介資料](https://speakerdeck.com/nextbeat/company-profile)
 
 ---
 
@@ -155,9 +149,8 @@ img {
 
 ### 雰囲気について
 
-- 昨年ハイブリッドでオフライン参加したが、雰囲気が全く違った
-- 英語の発表も多く、グローバル！
-- Scala 好きの人が集まっていて、熱気があった
+- 英語の発表も多く、グローバルな雰囲気
+- Scala 好きの人が集まる熱気
 
 <div class="image-container">
   <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_0006.png" />
@@ -175,18 +168,20 @@ img {
 }
 </style>
 
+<!--
+- 昨年ハイブリッドでオフライン参加したが、雰囲気が全く違った
+- 両日とも楽しすぎてあっという間に終わった
+-->
+
 ---
 
 # ScalaMatsuri 2024 の感想
 
 ### 会場について
 
-- 発表、質疑応答時の英語 <-> 日本語の同時通訳があって、英語が不安でも楽しめた
-  - レシーバーの配布、マイクの運搬お疲れさまでした...
-- 会場が広く、また、座るのが辛くなかった
-- ノベルティが豪華だった
-- お昼の弁当、コーヒーが美味しかった
-- 懇親会 🍺
+- 同時通訳あり、英語が不安でも楽しめた
+- 広い会場、豪華なノベルティ
+- 美味しいお弁当とコーヒー
 
 <div class="image-container">
   <img src="/images/badge.png" />
@@ -208,16 +203,24 @@ img {
 }
 </style>
 
+<!--
+- 発表、質疑応答時の英語 <-> 日本語の同時通訳があって、英語が不安でも楽しめた
+  - レシーバーの配布、マイクの運搬お疲れさまでした...
+- 会場が広く、また、座るのが辛くなかった
+- ノベルティが豪華だった
+- お昼の弁当、コーヒーが美味しかった
+- 懇親会 🍺
+- 懇親会での交流も楽しかった。やはり Scala バージョン更新に苦労している方 (会社) が多かった
+-->
+
 ---
 
 # ScalaMatsuri 2024 の感想
 
 ### 発表について
 
-- Scala のビルドツール、ライブラリ、エコシステムの進化を学ぶことができた
-- Scala 3, scala-cli を使ったものが多かった
-- Scala 3 は生産性が高い、書いていて楽しい、Scala 2 よりも理解しやすい。もっと流行らせたい
-- opaque, coursier, tapir などの単語の読み方を知ることができた
+- Scala 3 の進化を実感
+- Opaque types, Coursier, tapir の発音を学んだ
 
 |  |  |
 | --- | --- |
@@ -225,32 +228,12 @@ img {
 | coursier  | クルシェ |
 | tapir | タピア |
 
-
----
-
-# ScalaMatsuri 2024 の感想
-
-### 全体的な感想
-
-- 両日とも楽しすぎてあっという間に終わった
-- 懇親会での交流も楽しかった。やはり Scala バージョン更新に苦労している方 (会社) が多かった
+<!--
+- Scala のビルドツール、ライブラリ、エコシステムの進化を学ぶことができた
+- Scala 3, scala-cli を使ったものが多かった
+- Scala 3 は生産性が高い、書いていて楽しい、Scala 2 よりも理解しやすい。もっと流行らせたい
 - 業務アプリケーションを全て Scala 3 にあげたくなった
-
-<div class="image-container">
-  <img src="/images/daiba_kirei.png">
-  <img src="/images/gohan_oishii.png">
-</div>
-
-<style scoped>
-.image-container {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-img {
-  width: 40%;
-}
-</style>
+-->
 
 ---
 
@@ -266,10 +249,7 @@ img {
 - [数値ライブラリで始める安全なプログラミング](https://speakerdeck.com/boykush/introduction-to-safe-programming-with-numeric-library)
 - PHPからScalaへ：私の経験
 - [Scalaの開発者ツールエコシステム](https://slides.com/tomekgodzik/scala-ecosystem)
-
-<!--
-飛び込みカンファレンスについても口頭で紹介する
--->
+- 飛び込みカンファレンス
 
 ---
 
@@ -281,10 +261,7 @@ img {
 - [作って学ぶ Extensible Effects](https://docs.google.com/presentation/d/1raybiE8Otk2nreKDyRHoF1HK50K9K-fjL8-37QK8kW4/edit)
 - Ox を用いた Direct-Style Scala
 - [いつ継承を使い、いつ使わないのか](https://gakuzzzz.github.io/slides/when_to_use_subtyping_when_not_to_use/#1)
-
-<!--
-飛び込みカンファレンスについても口頭で紹介する
--->
+- 飛び込みカンファレンス
 
 ---
 
@@ -367,7 +344,7 @@ img {
 
 - <span v-click>Scala CLI x Apache Spark x Apache Kafka x BigQuery でデータ処理を行う話</span>
 - <span v-click>Scala 3 の強み</span>
-  - <span v-click>Syntax</span><span v-click>, Enums</span><span v-click>, トップレベル定義</span><span v-click>, リリースサイクル</span><span v-click>, Scala CLI</span>
+  - <span v-click>Syntax, Enums, トップレベル定義, リリースサイクル, Scala CLI</span>
 - <span v-click>Scala CLI によって、Spark によるデータ処理を Python のように生産性高く書くことができる</span>
 - <span v-click>Scala.js のおかげで、BigQuery のユーザー定義関数を Scala で書くことができる</span>
 
@@ -444,13 +421,22 @@ println(r + %(email = "taretmch@example.com")) // - %(name = taretmch, age = 20,
 - デフォルトでサポートされている制約が多い
 - 例えば、以下のような制約を表現できる
 
+```scala
+
+```
+
 <!-- TODO: あとで書く -->
 
 <br>
 
+<div v-click>
+
 ### 感想
 
-- require 使ってるなら Iron に書き換えた方が安全そう
+- require 使ってるなら Iron に書き換えた方が安全
+- 後の発表のプロパティベーステストと組み合わせるとコードの信頼性が高まりそう
+
+</div>
 
 ---
 
@@ -530,31 +516,64 @@ println(Real(2).sqrt.toRational(6).toBigDecimal(5, HALF_UP)) // 1.40625
 - <span v-click>Scala を始めるためにピッタリのリンク集</span>
   - <span v-click>[GitHub](https://github.com/KristianLentino99/ScalaMatsuri2024)</span>
 
----
+<br>
 
-# PHPからScalaへ：私の経験
+<div v-click>
 
 ### 感想
 
-- Scala のパターンマッチングは強い
-- コレクションメソッドの高階関数は他の言語にも導入されてきていて、Scala でやっていて当たり前になっていることの良さを確認できた
+- Scala では当たり前になっていることの良さを確認できた
 - 中置記法のような記法は直感的で、コードの可読性が上がる
+
+</div>
 
 ---
 
 # Scalaの開発者ツールエコシステム
 
-- Scalameta 
+- Scalameta、Metals など開発者ツールについての紹介
 
-ポイント
+|  |  |
+| --- | --- |
+| [Metals](https://scalameta.org/metals/) | LSP (Language Server Protocol) |
+| [Coursier](https://get-coursier.io/) | Java依存関係の管理 |
+| [Scalafmt](https://scalameta.org/scalafmt/) | フォーマッター |
+| [Scala Steward](https://github.com/scala-steward-org/scala-steward) | 依存ライブラリのバージョン更新 |
+| [Scalameta](https://scalameta.org/) | AST、semanticdb |
+| [WartRemover](https://www.wartremover.org/) | リンター |
+| [Scalafix](https://scalacenter.github.io/scalafix/) | リファクタリング |
+| [Scala CLI](https://scala-cli.virtuslab.org/) | 簡単にコード実行 |
+| [Scastie](https://scastie.scala-lang.org/) | オンラインコード共有 |
+| [mdoc](https://scalameta.org/mdoc/) | ドキュメント内でコード実行 |
+| [Scala Toolkit](https://docs.scala-lang.org/toolkit/introduction.html) | http、jsonなど基本的な依存が入ったツール群 |
 
-- コンパイルのレイヤー (e.g. sbt -> zinc -> scalac) 、コンパイルフェーズの紹介
-- 適切にプロジェクトを分割し (1プロジェクト20ファイルくらい) 依存関係を綺麗にすれば、並行ビルドによりビルド時間を短縮できる
-- パイプラインビルド (Scala 3.5.0) によるビルド時間の短縮
+<style scoped>
+td {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.5rem;
+}
+</style>
+
+<!--
+- Metals, ScalaCLI チームの人！
+-->
+
+---
+
+# Scalaの開発者ツールエコシステム
+
+### 感想
+
+- スライドがクイズ形式で楽しかった
+- 個々の紹介はあっても一覧で見ることは少なかったので、ありがたかった
 
 ---
 
 # Scala ビルド時間の最適化
+
+- コンパイルのレイヤー (e.g. sbt -> zinc -> scalac) 、コンパイルフェーズの紹介
+- 適切にプロジェクトを分割し (1プロジェクト20ファイルくらい) 依存関係を綺麗にすれば、並行ビルドによりビルド時間を短縮できる
+- パイプラインビルド (Scala 3.5.0) によるビルド時間の短縮
 
 ---
 
