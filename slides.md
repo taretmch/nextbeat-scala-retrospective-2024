@@ -423,7 +423,7 @@ println(r + (email = "taretmch@example.com")) // - %(name = taretmch, age = 20, 
 
 <div v-click>
 
-```scala {|2|6,7|9,10,11}
+```scala
 // name はアルファベットのみ、age は 0 より大きい
 case class User(name: String :| Alphanumeric, age: Int :| Greater[0])
 
@@ -589,7 +589,7 @@ td {
 - <span v-click>コンパイルのレイヤー (e.g. sbt -> zinc -> scalac) 、フェーズを意識することでビルド時間を短縮できる</span>
   - <span v-click>プロジェクトの分割 (1プロジェクト20ファイルくらいが良いらしい)、依存関係の整理による並行ビルド</span>
 - <span v-click>Scala 3.4.0 ではビルドの進捗状況表示、キャンセルの機能が追加された</span>
-- <span v-click>Scala 3.5.0 ではパイプラインビルドが導入される (Scala 2, sbt 1.4 からのポーティング)</span>
+- <span v-click>Scala 3.5.0 ではパイプラインビルドが導入される ([Scala 2, sbt 1.4 からのポーティング](https://xuwei-k.hatenablog.com/entry/2020/10/24/020950))</span>
 
 <!--
 scala center の Jamie Thompson さんによる発表
@@ -807,11 +807,9 @@ def area(shape: ShapeADT): Double = shape match
 - [tapir](https://github.com/softwaremill/tapir) は、エンドポイントの定義を型安全に行うためのライブラリ
 - tapir は、以下のようにエンドポイントを定義する
 
-```scala {|6,7,13,14}
-import io.circe.generic.auto._
+```scala {|4,5,11,12}
 import sttp.tapir.*
 import sttp.tapir.json.circe._
-import sttp.tapir.generic.auto._
 
 case class JsValuePutRecord(name: String)
 case class JsValueRecord(name: String, age: Int)
@@ -833,14 +831,13 @@ val putRecord1 = endpoint
 
 - Record を利用して、エンドポイントを以下のように変更する
 
-```scala {|12,14,15}
+```scala {|11,13,14}
 import com.github.tarao.record4s.*
 import com.github.tarao.record4s.circe.Codec.encoder
 import com.github.tarao.record4s.circe.Codec.decoder
 
 import sttp.tapir.*
 import sttp.tapir.json.circe._
-import sttp.tapir.generic.auto._
 
 val putRecord2 = endpoint
   .put
