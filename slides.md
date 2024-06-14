@@ -36,7 +36,7 @@ NB-Scala レトロスペクティブ (#NextMatsuri) - 2024年6月14日<br>
   </div>
 </div>
 
-<style scoped>
+<style>
 .container {
     display: flex;
 }
@@ -78,7 +78,7 @@ img {
 
 # ScalaMatsuri 2024 お疲れさまでした！
 
-<style scoped>
+<style>
 .container {
     display: flex;
     width: 70%;
@@ -132,7 +132,7 @@ img {
   <img src="/images/matsuri.png">
 </div>
 
-<style scoped>
+<style>
 .image-container {
   position: absolute;
   right: 50px;
@@ -147,63 +147,47 @@ img {
 
 # ScalaMatsuri 2024 の感想
 
-### 雰囲気について
-
 - 英語の発表も多く、グローバルな雰囲気
 - Scala 好きの人が集まる熱気
+- 広い会場、豪華なノベルティ
+- 美味しいお弁当とコーヒー
 
-<div class="image-container">
+<div class="image-1">
   <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_0006.png" />
 </div>
 
-<style scoped>
-.image-container {
+<div class="image-2">
+  <img src="/images/badge.png" />
+  <p>素敵な Scala のバッジも</p>
+</div>
+
+<style>
+.image-1 {
+  position: absolute;
+  right: 250px;
+  bottom: 100px;
+}
+.image-1 img {
+  height: 200px;
+  margin: auto;
+}
+.image-2 {
   position: absolute;
   right: 50px;
   bottom: 50px;
 }
-img {
-  height: 280px;
+.image-2 img {
+  height: 200px;
   margin: auto;
+}
+.image-2 p {
+  text-align: center;
 }
 </style>
 
 <!--
 - 昨年ハイブリッドでオフライン参加したが、雰囲気が全く違った
 - 両日とも楽しすぎてあっという間に終わった
--->
-
----
-
-# ScalaMatsuri 2024 の感想
-
-### 会場について
-
-- 同時通訳あり、英語が不安でも楽しめた
-- 広い会場、豪華なノベルティ
-- 美味しいお弁当とコーヒー
-
-<div class="image-container">
-  <img src="/images/badge.png" />
-  <p>素敵な Scala のバッジも</p>
-</div>
-
-<style scoped>
-.image-container {
-  position: absolute;
-  right: 50px;
-  bottom: 50px;
-}
-img {
-  height: 200px;
-  margin: auto;
-}
-.image-container p {
-  text-align: center;
-}
-</style>
-
-<!--
 - 発表、質疑応答時の英語 <-> 日本語の同時通訳があって、英語が不安でも楽しめた
   - レシーバーの配布、マイクの運搬お疲れさまでした...
 - 会場が広く、また、座るのが辛くなかった
@@ -219,6 +203,7 @@ img {
 
 ### 発表について
 
+- 同時通訳あり、英語が不安でも楽しめた
 - Scala 3 の進化を実感
 - Opaque types, Coursier, tapir の発音を学んだ
 
@@ -271,13 +256,13 @@ img {
 - <span v-click>Cats, ZIO などのライブラリを使わずに、Scala のコアライブラリだけでエコシステムを築き上げている</span>
 - <span v-click>Python のようなシンプルな記法で書くことができるのが特徴</span>
 - <span v-click>com.lihaoyi のライブラリを組み合わせることで、様々なアプリケーションを作ることができる</span>
-  - <span v-click>[組み合わせの一覧 📝](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html#the-comlihaoyi-platform-has-built-out-a-third-way) (スクショはこのリンクから作成)</span>
+  - <span v-after>[組み合わせの一覧 📝](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html#the-comlihaoyi-platform-has-built-out-a-third-way) (スクショはこのリンクから作成)</span>
 
-<div v-click class="image-container">
+<div v-after class="image-container">
   <img src="/images/lihaoyi-cheat-sheet.png" />
 </div>
 
-<style scoped>
+<style>
 .image-container {
   margin-top: 20px;
 }
@@ -374,9 +359,9 @@ import com.github.tarao.record4s.circe.Codec.encoder
 import io.circe.syntax.*
 
 val r = %(name = "taretmch", age = 20)
-println(r)                                     // - %(name = taretmch, age = 20)
-println(r.name)                                // - taretmch
-println(r.asJson.noSpaces)                     // - {"name":"taretmch","age":20}
+println(r)                                    // - %(name = taretmch, age = 20)
+println(r.name)                               // - taretmch
+println(r.asJson.noSpaces)                    // - {"name":"taretmch","age":20}
 println(r + (email = "taretmch@example.com")) // - %(name = taretmch, age = 20, email = taretmch@example.com)
 ```
 
@@ -523,12 +508,12 @@ println(Real(2).sqrt.toRational(6).toBigDecimal(5, HALF_UP)) // 1.40625
 
 - <span v-click>PHP から Scala に移行した経験談の話</span>
 - <span v-click>Scala の魅力的だった点として以下の点が挙げられた</span>
-  - <span v-click>Option 型の null safe</span>
-  - <span v-click>パターンマッチング</span>
-  - <span v-click>中置記法 (infix, 配列のコレクションメソッド)</span>
-  - <span v-click>implicit の表現力 (Scala 3 だと given, using, extension, Conversion)</span>
+  - <span v-after>Option 型の null safe</span>
+  - <span v-after>パターンマッチング</span>
+  - <span v-after>中置記法 (infix, 配列のコレクションメソッド)</span>
+  - <span v-after>implicit の表現力 (Scala 3 だと given, using, extension, Conversion)</span>
 - <span v-click>Scala を始めるためにピッタリのリンク集</span>
-  - <span v-click>[GitHub](https://github.com/KristianLentino99/ScalaMatsuri2024)</span>
+  - <span v-after>[GitHub](https://github.com/KristianLentino99/ScalaMatsuri2024)</span>
 
 <br>
 
@@ -561,7 +546,7 @@ println(Real(2).sqrt.toRational(6).toBigDecimal(5, HALF_UP)) // 1.40625
 | [mdoc](https://scalameta.org/mdoc/) | ドキュメント内でコード実行 |
 | [Scala Toolkit](https://docs.scala-lang.org/toolkit/introduction.html) | http、jsonなど基本的な依存が入ったツール群 |
 
-<style scoped>
+<style>
 td {
   font-size: 0.8rem;
   padding: 0.3rem 0.5rem;
@@ -604,6 +589,8 @@ scala center の Jamie Thompson さんによる発表
 - プロダクションコードのビルド時間を解析してみた
   - 綺麗に分割されているプロジェクトほど並行ビルドされており、ビルド時間が短縮されていた
   - 一方でプロジェクト自体が肥大化して依存関係が汚くなると、直列でビルドが行われビルド時間が長くなっていた
+- プロダクションコードをパイプラインビルドしてみた
+  - コンパイル時間が200秒だったところ、140秒に短縮された (60秒も!)
 - 開発生産性のためにも、sbt プロジェクトのアーキテクチャを見直すことが重要だと感じた
 
 </div>
@@ -651,7 +638,7 @@ val smallInteger = Gen.choose(0,100)
   - <span v-click>flatMap の波動拳の代わりに for 糖衣構文を使おう</span>
   - <span v-click>Enum のパターンマッチでは `case _` を使わないようにしよう (大事)</span>
 
-<div v-click>
+<div v-after>
 ```scala
 enum Color:
   case Red, Green, Blue
@@ -798,7 +785,6 @@ def area(shape: ShapeADT): Double = shape match
 - <span v-click>今年は、Scala の基礎から応用、コンパイラ、ライブラリまで幅広いトピックが取り上げられた</span>
 - <span v-click>2019年以来のオフライン開催で、会場の雰囲気、熱気は最高だった</span>
 - <span v-click>Scala 3 は生産性が高い、書いていて楽しい、Scala 2 よりも理解しやすい。もっと流行らせたい</span>
-- <span v-click>来年は難しい発表にも頷いて聞けるように精進する</span>
 
 ---
 
@@ -914,6 +900,8 @@ inline given schema[R <: %](using r: RecordLike[R]): Schema[R] =
 
 # record4s と tapir の連携
 
+<div class="left-container">
+
 - 1つの given インスタンスによって、以下のようなエンドポイントの定義が可能になった
 
 ```scala
@@ -929,15 +917,22 @@ val putRecord = endpoint
   )
 ```
 
+- カラム数が28以上になると `Maximal number of successive inlines (32) exceeded` と怒られるので注意
+
+</div>
+
 <div class="image-container">
   <img src="/images/openapi_sample.png" />
   <p>OpenAPI の出力例</p>
 </div>
 
-<style scoped>
+<style>
+.left-container {
+  width: 80%;
+}
 .image-container {
   position: absolute;
-  right: 200px;
+  right: 50px;
   bottom: 15px;
   text-align: center;
 }
