@@ -59,6 +59,7 @@ img {
 - <span v-mark.underline.orange>人口減少社会</span>をメインテーマに、保育園/法人向け SaaS、シェアリングエコノミー、子育てメディア、保育/宿泊業界のHR求人応募システムなど様々な事業を展開している
 - 使用技術: Scala (2.12, 2.13, 3), TypeScript (Svelte, NestJS, Angular, ...), ...
 - [会社紹介資料](https://speakerdeck.com/nextbeat/company-profile)
+- 毎週木曜日20:00〜22:00、この場所でバー ([Nextbeat Hub](https://www.nextbeat.co.jp/recruit/nextbeat-hub)) を開いています🥃
 
 ---
 
