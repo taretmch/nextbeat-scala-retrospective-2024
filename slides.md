@@ -250,6 +250,16 @@ img {
 - <span v-click>ライブラリ作成者 lihaoyi さんによる Scala のライブラリ群の紹介と、その歴史の話</span>
 - <span v-click>Cats, ZIO などのライブラリを使わずに、Scala のコアライブラリだけでエコシステムを築き上げている</span>
 - <span v-click>Python のようなシンプルな記法で書くことができるのが特徴</span>
+
+<div v-after>
+
+```scala
+val res = requests.get("https://nextbeat.co.jp")
+println(res)
+```
+
+</div>
+
 - <span v-click>com.lihaoyi のライブラリを組み合わせることで、様々なアプリケーションを作ることができる</span>
   - <span v-after>[組み合わせの一覧 📝](https://www.lihaoyi.com/post/12yearsofthecomlihaoyiScalaPlatform.html#the-comlihaoyi-platform-has-built-out-a-third-way) (スクショはこのリンクから作成)</span>
 
