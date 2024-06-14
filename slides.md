@@ -677,8 +677,8 @@ def getEmojiGood(color: Color): String = color match
 # 作って学ぶ Extensible Effects
 
 - <span v-click>エフェクトシステムの実装である Extensible Effects (Eff) をどう作るか考える話</span>
-- <span v-click>アセンブリ言語の命令セットを処理する機械を紐解いていくと、Eff の仕組みが理解できる(らしい)</span>
-- <span v-click>何か語れるほど理解していないので、[スライド](https://docs.google.com/presentation/d/1raybiE8Otk2nreKDyRHoF1HK50K9K-fjL8-37QK8kW4/edit#slide=id.p)を見てください</span>
+- <span v-click>アセンブリ言語の命令セットを処理する機械を紐解いていくと、Eff の仕組みが理解できる</span>
+- <span v-click>先ほど解説いただいたので、ここで何か語るのは憚られる</span>
 
 <div v-click>
 
