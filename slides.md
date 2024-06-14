@@ -19,41 +19,35 @@ NB-Scala レトロスペクティブ (#NextMatsuri) - 2024年6月14日<br>
 
 # 自己紹介
 
-<div class="container">
-  <div class="left">
-    <ul>
-      <li>ScalaMatsuri には2021年から参加🏮</li>
-      <li>Scala 実務経験5年目</li>
-      <li>社内の共通ライブラリ (Scala, TypeScript, Capacitor) や認証基盤を担当</li>
-    </ul>
-  </div>
-  <div class="right">
-    <img src="/images/icon.png" />
-    <div class="links">
-      <a href="https://twitter.com/taretmch" target="_blank">@taretmch</a>
-      <a href="https://github.com/taretmch" target="_blank">github</a>
-    </div>
+- ScalaMatsuri には2021年から参加🏮
+- Scala 実務経験5年目
+- 社内の共通ライブラリ (Scala, TypeScript, Capacitor) や認証基盤を担当
+
+<div class="image-container">
+  <img src="/images/icon.png" />
+  <div class="links">
+    <a href="https://twitter.com/taretmch" target="_blank">@taretmch</a>
+    <a href="https://github.com/taretmch" target="_blank">github</a>
   </div>
 </div>
 
 <style>
-.container {
-    display: flex;
-}
-.left {
-    margin-right: 10px;
+.image-container {
+  position: absolute;
+  top: 160px;
+  right: 80px;
 }
 img {
-    height: 70%;
-    margin: auto;
+  height: 150px;
+  margin: auto;
 }
 .links {
-    margin-top: 10px;
-    text-align: center;
-    color: #0077b5;
+  margin-top: 10px;
+  text-align: center;
+  color: #0077b5;
 }
-.links a {
-    margin: 0 5px;
+.links a:not(:first-child) {
+  margin-left: 10px;
 }
 </style>
 
