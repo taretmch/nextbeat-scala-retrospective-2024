@@ -13,7 +13,7 @@ layout: intro
 # <span style="font-size: 3.5rem;">ScalaMatsuri 2024 の発表振り返り</span>
 
 NB-Scala レトロスペクティブ (#Nextbeat_Matsuri) - 2024年6月14日<br>
-株式会社ネクストビート 溝上友貴
+株式会社ネクストビート taretmch
 
 ---
 
