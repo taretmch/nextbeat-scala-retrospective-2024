@@ -106,11 +106,11 @@ img {
 
 <div class="container">
   <div class="left">
-    <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_9993.png" />
+    <img src="/images/scalamatsuri_top.png" />
   </div>
   <div class="right">
-    <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_0006.png" />
-    <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_9999.png" />
+    <img src="/images/kaijou.png" />
+    <img src="/images/cafe.png" />
   </div>
 </div>
 
@@ -148,7 +148,7 @@ img {
 - 美味しいお弁当とコーヒー
 
 <div class="image-1">
-  <img src="https://i-assets-io-github-taretmch.s3.ap-northeast-1.amazonaws.com/nextbeat-matsuri-2024/IMG_0006.png" />
+  <img src="/images/kaijou.png" />
 </div>
 
 <div class="image-2">
